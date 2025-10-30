@@ -1,18 +1,207 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>美食照片展示</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豪华汽车图鉴</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e6e6e6;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff7e5f;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .car-card {
+            background: rgba(30, 30, 46, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .car-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 126, 95, 0.3);
+        }
+        
+        .car-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .car-card:hover .car-img {
+            transform: scale(1.05);
+        }
+        
+        .car-info {
+            padding: 20px;
+        }
+        
+        .car-title {
+            font-size: 1.4rem;
+            color: #feb47b;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .car-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .car-desc {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .car-features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-value {
+            font-weight: bold;
+            color: #ff7e5f;
+        }
+        
+        .feature-label {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+            color: #7f8c8d;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .stats {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>我的美食照片墙</h1>
-  <div class="gallery">
-<!-- 美食卡片1 -->
-            <div class="food-card">
-                <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="food-img">
+    <div class="container">
+        <div class="gallery">
+            <!-- 汽车卡片1 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="car-img">
             </div>
-  </div>
+            
+            <!-- 汽车卡片2 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="car-img">
+            </div>
+            
+            <!-- 汽车卡片3 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="car-img">
+            </div>
+            
+            <!-- 汽车卡片4 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="car-img">
+            </div>
+            
+            <!-- 汽车卡片5 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1556189250-72ba954cfc2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="car-img">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
